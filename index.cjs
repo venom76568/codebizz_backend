@@ -52,7 +52,7 @@ app.post("/register", async (req, res) => {
   const { teamName, teamMembers, members } = req.body;
 
   // Basic validation (you can add more validation as per your requirements)
-  if (!teamName || !teamMembers || !members || members.length !== teamMembers) {
+  if (!teamName || !teamMembers || !members || members.length <= teamMembers) {
     return res.status(400).json({ message: "Invalid team data." });
   }
 
